@@ -1,0 +1,29 @@
+# Tutorial  
+
+https://testautomationu.applitools.com/pact-contract-tests/
+
+Welcome to the Contract Tests with Pact course.
+
+In this course, you will learn what contract tests are, when to apply them, and how to set up your test framework with Pact. 
+  
+# Topics discussed will cover:
+
+Advantages of contract tests
+
+How to set up a framework using pact-js
+
+How to implement the test on your provider and consumer
+
+Different types of matches you can perform with Pact
+
+Best practices for implementing a contract test framework
+
+Handling authentication and authorization
+
+Analyzing test results and common issues
+
+CI/CD integrations.
+
+Pact supports a variety of languages, but in this course we will focus on JavaScript. 
+  
+The concepts are similar regardless of the tech stack.
