@@ -1,0 +1,36 @@
+# Difference between contract testing and api testing
+
+API testing verifies whether an API works properly at the functional, performance, and security levels.
+
+Whereas contract testing is a lightweight subset of API testing that verifies two services adhere to 
+an agreed-upon communication format (a "contract") without needing a live, end-to-end environment.
+  
+In short, API testing checks if the API does the right thing, while contract testing checks if the API speaks the right language.
+
+
+# Key Differences
+
+Feature	                        API Testing	                                                                          Contract Testing
+
+Primary Goal	   Validates business logic, data accuracy, error handling, speed, and security.	     Validates that requests and responses match an agreed schema and structure.
+  
+Environment	      Usually requires a running instance of the API and often connected 	               Runs in isolation using mocks or static specifications (like OpenAPI) 
+                  databases or downstream services.                                                  without needing live services together.
+  
+Scope	           Broad. Tests single endpoints, multi-step user workflows, edge cases,               	Narrow. Focuses strictly on the interface boundaries (fields, data types, status codes)
+                 and load limits.                                                                     between a consumer and a provider.
+
+Execution Speed	 Slower (tens of milliseconds to seconds per test, depending on dependencies).	     Very fast (sub-second), making it ideal for running on every pull request in CI/CD pipelines.
+
+Common Tools	  Postman, REST Assured, Playwright, JMeter	                                           Pact, Spring Cloud Contract, Schemathesis, OpenAPI validators
+
+# When to Use Which
+
+• Use API Testing when you need to verify behavior. 
+It is essential for checking that a payment actually processes, an unauthorized user gets blocked, or an endpoint handles 1,000 requests per second without crashing.
+
+• Use Contract Testing when you have independent teams or microservices. If a frontend team (consumer) and a backend team (provider) deploy on different schedules, 
+contract tests immediately catch breaking changes—like renaming a JSON field—before code ever reaches a shared staging environment.
+
+• Combine both for complete coverage. Contract tests act as fast, cheap insurance against interface drift during development.
+Functional API tests then confirm the deeper business logic works as intended.
